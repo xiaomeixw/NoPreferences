@@ -14,9 +14,9 @@ import java.util.Map;
  * Version:1.0
  * Open source
  */
-public class ProxyGenerator {
+public class NoPreferences {
 
-    public <T> T  create (Context context , Class<T> instance){
+    public static <T>  T  create (Context context , Class<T> instance){
 
         //判断是否是接口
         checkIsInterface(instance);
@@ -33,7 +33,7 @@ public class ProxyGenerator {
 
 
 
-    private <T> void checkIsNotExtendingAnotherInterface(Class<T> instance) {
+    private static <T> void checkIsNotExtendingAnotherInterface(Class<T> instance) {
         if (0 < instance.getInterfaces().length) {
             throw new IllegalArgumentException(
                     "Interfaces extending other interfaces are not supported at this time");
@@ -46,8 +46,8 @@ public class ProxyGenerator {
         }
     }
 
-    private final Map<Class<?>, Map<Method, MethodInfo>> proxyMethodInfoCache = new LinkedHashMap<>();
-    private Map<Method, MethodInfo> getMethodInfoCache(Class<?> instance) {
+    private final static Map<Class<?>, Map<Method, MethodInfo>> proxyMethodInfoCache = new LinkedHashMap<>();
+    private static Map<Method, MethodInfo> getMethodInfoCache(Class<?> instance) {
         synchronized (proxyMethodInfoCache){
             Map<Method, MethodInfo> methodInfoCache = proxyMethodInfoCache.get(instance);
             if(methodInfoCache == null){

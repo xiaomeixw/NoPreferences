@@ -15,9 +15,9 @@ public class MainActivity extends AppCompatActivity {
         final PersonProxy proxy = MyApplication.getProxy();
 
         //storage
-        proxy.setMyName("M欸里神奇");
+        proxy.setMyName("HappyKandy");
 
-        tvName.setText("存储完毕");
+        tvName.setText("save OK");
 
         //then get from SP 4 seconds later
         new Thread(new Runnable() {

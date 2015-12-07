@@ -7,17 +7,17 @@ Deconstruct Dynamic proxy , Use SharedPreferences demo for my blog 's article
 #Use SharedPreferences in Android
 
 	private void setSp() {
-	        SharedPreferences sp = getSharedPreferences("my", Context.MODE_PRIVATE);
-	        SharedPreferences.Editor edit = sp.edit();
-	        edit.putString("mykey", "myvalue");
-	        edit.commit();
+	    SharedPreferences sp = getSharedPreferences("my", Context.MODE_PRIVATE);
+	    SharedPreferences.Editor edit = sp.edit();
+	    edit.putString("mykey", "myvalue");
+	    edit.commit();
 	}
 
 
 	private void getSp() {
 		SharedPreferences sp = getSharedPreferences("my", Context.MODE_PRIVATE);
 		String value = sp.getString("mykey","defalutvalue");
-     	}
+    }
 
 The code smell not good and write Duplicate code again and again...
 
@@ -27,18 +27,18 @@ Use NoPreferences So easy , API style just like Retrofit
 
 NoPreferences turns your set/get API into a Java interface.
 
-    	@SharePreference(name = "person",Mode = Context.MODE_PRIVATE)
-    	public interface PersonProxy {
+    @SharePreference(name = "person",Mode = Context.MODE_PRIVATE)
+    public interface PersonProxy {
 
-        	String key = "MYNAME";
+        String key = "MYNAME";
 
-        	@SpKey(key = key)
-        	void setMyName(String name);
+        @SpKey(key = key)
+        void setMyName(String name);
 
-        	@SpKey(key = key)
-        	String getMyName();
+        @SpKey(key = key)
+        String getMyName();
 
-    	}
+    }
 
 
 The NoPreferences class generates an implementation of the Proxy interface.

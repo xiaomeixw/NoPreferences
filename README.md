@@ -23,7 +23,7 @@ The code smell not good and write Duplicate code again and again...
 
 
 # NoPreferences Usage
-Use NoPreferences So easy , API style just like Retrofit
+Use NoPreferences So easy , API style just like Retrofit:
 
 NoPreferences turns your set/get API into a Java interface.
 

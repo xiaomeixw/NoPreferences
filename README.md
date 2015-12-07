@@ -43,7 +43,7 @@ NoPreferences turns your set/get API into a Java interface.
 
 The NoPreferences class generates an implementation of the Proxy interface.
 
- 	PersonProxy = NoPreferences.create(application, PersonProxy.class);
+ 	Person Proxy = NoPreferences.create(application, PersonProxy.class);
 
 Storage then get From SharedPreferences.
 
